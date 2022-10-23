@@ -1,6 +1,36 @@
+import { useState } from "react";
+import Search from "./components/Search/Search";
 import "./App.css";
 
 function App() {
+  const [search, setSearch] = useState("");
+  const teste = [
+    {
+      name: "Brazil",
+      population: 20000000,
+      region: "America",
+      capital: "brasilia",
+    },
+    {
+      name: "Peru",
+      population: 20000000,
+      region: "America",
+      capital: "brasilia",
+    },
+  ];
+
+  const renderCountries = () => {
+    return teste.map((e) => (
+      <div>
+        <h4>{e.name}</h4>
+
+        <div>Population: {e.population}</div>
+        <div>Region: {e.region}</div>
+        <div>Capital: {e.capital}</div>
+      </div>
+    ));
+  };
+
   return (
     <div className="App">
       <div className="Header">
@@ -8,9 +38,7 @@ function App() {
         <div className="Theme">Dark Mode</div>
       </div>
       <div className="Container">
-        <div className="Bar">
-          <input id="Search" placeholder="Search for a country..."></input>
-        </div>
+        <Search search={search} setSearch={setSearch} />
         <div className="Bar" id="Filter">
           <select>
             <option>Filter By Region</option>
@@ -22,7 +50,7 @@ function App() {
           </select>
         </div>
       </div>
-      <div className="Container"></div>
+      <div className="Container">{renderCountries()}</div>
     </div>
   );
 }
