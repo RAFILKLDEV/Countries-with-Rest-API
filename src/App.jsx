@@ -1,62 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Search from "./components/Search/Search";
 import "./App.css";
 import Country from "./components/Country/Country";
+import axios from "axios";
 
 function App() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
+  const [countries, setCountries] = useState([]);
 
-  const teste = [
-    {
-      name: "Brazil",
-      population: 20000000,
-      region: "America",
-      capital: "brasilia",
-    },
-    {
-      name: "Peru",
-      population: 20000000,
-      region: "America",
-      capital: "brasilia",
-    },
-    {
-      name: "Peru",
-      population: 20000000,
-      region: "America",
-      capital: "brasilia",
-    },
-    {
-      name: "Peru",
-      population: 20000000,
-      region: "America",
-      capital: "brasilia",
-    },
-    {
-      name: "Peru",
-      population: 20000000,
-      region: "America",
-      capital: "brasilia",
-    },
-    {
-      name: "Peru",
-      population: 20000000,
-      region: "America",
-      capital: "brasilia",
-    },
-    {
-      name: "Peru",
-      population: 20000000,
-      region: "America",
-      capital: "brasilia",
-    },
-    {
-      name: "Peru",
-      population: 20000000,
-      region: "America",
-      capital: "brasilia",
-    },
-  ];
+  useEffect(() => {
+    const api = "https://restcountries.com/v3.1/all";
+
+    function getCoutries() {
+      axios.get(api).then(async function (response) {
+        await setCountries(response.data);
+        console.log(response.data[47], "no await");
+      });
+    }
+    getCoutries();
+  }, []);
 
   return (
     <div className="App">
@@ -78,9 +41,13 @@ function App() {
         </div>
       </div>
       <div className="Container">
-        {teste.map((e) => (
-          <Country Country={e} />
-        ))}
+        <div className="Countries">
+          {countries.map((e) => {
+            if (e.name.common.toLowerCase().includes(search.toLowerCase())) {
+              return <Country Country={e} />;
+            }
+          })}
+        </div>
       </div>
     </div>
   );

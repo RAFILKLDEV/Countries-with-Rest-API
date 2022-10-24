@@ -2,13 +2,13 @@ import React from "react";
 
 const Country = (props) => {
   return (
-    <div>
-      <img src={props.Country.img} />
-      <h4>{props.Country.name}</h4>
+    <div className="Country">
+      <img src={props.Country?.flags.png} />
+      <h4>{props.Country?.name.common}</h4>
 
-      <div>Population: {props.Country.population}</div>
-      <div>Region: {props.Country.region}</div>
-      <div>Capital: {props.Country.capital}</div>
+      <div>Population: {props.Country?.population.toLocaleString()}</div>
+      <div>Region: {props.Country?.region}</div>
+      <div>Capital: {props.Country?.capital}</div>
     </div>
   );
 };

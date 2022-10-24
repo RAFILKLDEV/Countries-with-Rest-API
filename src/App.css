@@ -27,12 +27,27 @@
   word-wrap: none;
 }
 
-.Bar input{
+.Countries {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Country {
+  width: 200px;
+  margin: 30px 15px 10px; 
+}
+
+.Country img {
+  width: 200px;
+  height: 150px;
+}
+
+.Bar input {
   border: inherit;
   padding: 15px 20px;
 }
 
-.Bar select{
+.Bar select {
   border: inherit;
   padding: 15px 20px;
   padding-right: 20px;
