@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: rgb(250, 250, 250);
+  min-height: 100vh;
 }
 
 .Header {
@@ -34,12 +35,19 @@
 
 .Country {
   width: 200px;
-  margin: 30px 15px 10px; 
+  margin: 30px 15px 10px;
+  background-color: rgb(255, 255, 255);
+  padding: 0px 0px 20px 0px;
 }
 
 .Country img {
   width: 200px;
   height: 150px;
+}
+
+#button {
+  border: inherit;
+  background-color: inherit;
 }
 
 .Bar input {
@@ -49,8 +57,12 @@
 
 .Bar select {
   border: inherit;
-  padding: 15px 20px;
-  padding-right: 20px;
+  padding: 15px 20px 15px 20px;
+}
+
+.Bar select :active {
+  border: inherit;
+  padding: 15px 20px 15px 20px;
 }
 
 #Search {

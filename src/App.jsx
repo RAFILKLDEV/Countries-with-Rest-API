@@ -15,7 +15,6 @@ function App() {
     function getCoutries() {
       axios.get(api).then(async function (response) {
         await setCountries(response.data);
-        console.log(response.data[47], "no await");
       });
     }
     getCoutries();
@@ -25,15 +24,19 @@ function App() {
     <div className="App">
       <div className="Header">
         <h3 className="Title">Wheres in the world ?</h3>
-        <div className="Theme">Dark Mode</div>
+        <button id="button">
+          <h4 className="Theme">
+            <i class="fa fa-moon-o" aria-hidden="true"></i> Dark Mode
+          </h4>
+        </button>
       </div>
       <div className="Container">
         <Search search={search} setSearch={setSearch} />
         <div className="Bar" id="Filter">
           <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-            <option>Filter By Region</option>
+            <option value={""}>Filter By Region</option>
             <option>Africa</option>
-            <option>América</option>
+            <option>Americas</option>
             <option>Asia</option>
             <option>Europe</option>
             <option>Oceania</option>
@@ -42,10 +45,22 @@ function App() {
       </div>
       <div className="Container">
         <div className="Countries">
-          {countries.map((e) => {
-            if (e.name.common.toLowerCase().includes(search.toLowerCase())) {
-              return <Country Country={e} />;
+          {countries.map((e, i) => {
+            if (filter) {
+              if (e.region.toLowerCase().includes(filter.toLowerCase())) {
+                if (
+                  e.name.common.toLowerCase().includes(search.toLowerCase())
+                ) {
+                  return <Country key={i} Country={e} />;
+                }
+              }
+            } else {
+              if (e.name.common.toLowerCase().includes(search.toLowerCase())) {
+                return <Country key={i} Country={e} />;
+              }
             }
+
+            return "";
           })}
         </div>
       </div>
