@@ -1,9 +1,12 @@
 import { useState } from "react";
 import Search from "./components/Search/Search";
 import "./App.css";
+import Country from "./components/Country/Country";
 
 function App() {
   const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("");
+
   const teste = [
     {
       name: "Brazil",
@@ -17,19 +20,43 @@ function App() {
       region: "America",
       capital: "brasilia",
     },
+    {
+      name: "Peru",
+      population: 20000000,
+      region: "America",
+      capital: "brasilia",
+    },
+    {
+      name: "Peru",
+      population: 20000000,
+      region: "America",
+      capital: "brasilia",
+    },
+    {
+      name: "Peru",
+      population: 20000000,
+      region: "America",
+      capital: "brasilia",
+    },
+    {
+      name: "Peru",
+      population: 20000000,
+      region: "America",
+      capital: "brasilia",
+    },
+    {
+      name: "Peru",
+      population: 20000000,
+      region: "America",
+      capital: "brasilia",
+    },
+    {
+      name: "Peru",
+      population: 20000000,
+      region: "America",
+      capital: "brasilia",
+    },
   ];
-
-  const renderCountries = () => {
-    return teste.map((e) => (
-      <div>
-        <h4>{e.name}</h4>
-
-        <div>Population: {e.population}</div>
-        <div>Region: {e.region}</div>
-        <div>Capital: {e.capital}</div>
-      </div>
-    ));
-  };
 
   return (
     <div className="App">
@@ -40,7 +67,7 @@ function App() {
       <div className="Container">
         <Search search={search} setSearch={setSearch} />
         <div className="Bar" id="Filter">
-          <select>
+          <select value={filter} onChange={(e) => setFilter(e.target.value)}>
             <option>Filter By Region</option>
             <option>Africa</option>
             <option>América</option>
@@ -50,7 +77,11 @@ function App() {
           </select>
         </div>
       </div>
-      <div className="Container">{renderCountries()}</div>
+      <div className="Container">
+        {teste.map((e) => (
+          <Country Country={e} />
+        ))}
+      </div>
     </div>
   );
 }
