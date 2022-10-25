@@ -8,6 +8,14 @@ function App() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
   const [countries, setCountries] = useState([]);
+  const [darkMode, setDarkMode] = useState(false)
+
+  const toggleDark = () => {
+    console.log("cliquei")
+    setDarkMode(!darkMode)
+  }
+
+  console.log(darkMode)
 
   useEffect(() => {
     const api = "https://restcountries.com/v3.1/all";
@@ -21,12 +29,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App" id={darkMode ? "Dark-mode" : ""}>
       <div className="Header">
         <h3 className="Title">Wheres in the world ?</h3>
-        <button id="button">
+        <button id="button" onClick={toggleDark}>
           <h4 className="Theme">
-            <i class="fa fa-moon-o" aria-hidden="true"></i> Dark Mode
+            <i className="fa fa-moon-o" aria-hidden="true"></i> Dark Mode
           </h4>
         </button>
       </div>
@@ -59,7 +67,6 @@ function App() {
                 return <Country key={i} Country={e} />;
               }
             }
-
             return "";
           })}
         </div>

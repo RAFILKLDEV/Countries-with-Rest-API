@@ -1,7 +1,17 @@
 .App {
+  --white: rgb(255, 255, 255);
+  --gray: rgb(250, 250, 250);
+  --black: rgb(20, 20, 20);
   text-align: center;
-  background-color: rgb(250, 250, 250);
+  background-color: var(--gray);
   min-height: 100vh;
+  color: var(--black);
+}
+
+#Dark-mode {
+  --white: rgb(20, 20, 20);
+  --gray: rgb(40, 40, 40);
+  --black: rgb(250, 250, 250);
 }
 
 .Header {
@@ -10,7 +20,7 @@
   justify-content: space-between;
   padding: 0px 50px;
   box-shadow: 0px 0px 5px black;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--white);
 }
 
 .Container {
@@ -23,7 +33,7 @@
 .Bar {
   display: flex;
   align-items: center;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--white);
   width: 300px;
   word-wrap: none;
 }
@@ -36,7 +46,7 @@
 .Country {
   width: 200px;
   margin: 30px 15px 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--white);
   padding: 0px 0px 20px 0px;
 }
 
@@ -48,6 +58,7 @@
 #button {
   border: inherit;
   background-color: inherit;
+  color: var(--black);
 }
 
 .Bar input {
