@@ -148,6 +148,14 @@
     height: 235px;
     gap: 10px;
   }
+
+  #mobile {
+    padding: 0px;
+  }
+
+  #Column {
+    padding: 0px;
+  }
 }
 
 @media screen and (max-width: 400px) {
