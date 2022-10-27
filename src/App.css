@@ -39,9 +39,19 @@
   word-wrap: none;
 }
 
+.ButtonCountry {
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 200px;
+  height: 50px;
+}
+
+#Button:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
 .Countries {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -53,12 +63,16 @@
   padding: 0px 0px 20px 0px;
 }
 
+.Country:hover {
+  border: solid 2px black;
+}
+
 .Country img {
   width: 200px;
   height: 150px;
 }
 
-#button {
+#Button {
   border: inherit;
   background-color: inherit;
   color: var(--black);
@@ -82,6 +96,7 @@
 #Active {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 600px;
   gap: 10px;
 }
@@ -105,6 +120,50 @@
 
 #Filter {
   width: auto;
+}
+
+@media screen and (max-width: 806px) {
+  #bars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .Header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  #Active {
+    width: 400px;
+  }
+
+  #Active img {
+    width: 400px;
+    height: 235px;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #Active {
+    width: 200px;
+  }
+
+  #mobile {
+    padding: 0px;
+  }
+
+  #Active img {
+    width: 200px;
+    height: 150px;
+    gap: 10px;
+  }
 }
 
 @keyframes darkin {

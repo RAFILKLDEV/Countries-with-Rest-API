@@ -31,15 +31,10 @@ const ActiveCountry = (props) => {
 
   return (
     <div className="Container" id="Column">
-      <button id="button" onClick={() => props.setActive("")}>
+      <button className="ButtonCountry" id="Button" onClick={() => props.setActive("")}>
         Voltar
       </button>
       <div className="Country" id="Active">
-        <button
-          onClick={() => {
-            objectMap2(country[0]?.languages);
-          }}
-        ></button>
         <img alt={country[0]?.name.common} src={country[0]?.flags.png} />
         <div>
           <h2>{country[0]?.name.common}</h2>

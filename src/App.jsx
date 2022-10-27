@@ -31,7 +31,7 @@ function App() {
     <div className="App" id={darkMode ? "Dark-mode" : ""}>
       <div className="Header">
         <h3 className="Title">Wheres in the world ?</h3>
-        <button id="button" onClick={toggleDark}>
+        <button id="Button" onClick={toggleDark}>
           <h4 className="Theme">
             <i
               className={darkMode ? "fa fa-sun-o" : "fa fa-moon-o"}
@@ -41,7 +41,7 @@ function App() {
           </h4>
         </button>
       </div>
-      <div className="Container">
+      <div className="Container" id="bars">
         <Search search={search} setSearch={setSearch} />
         <div className="Bar" id="Filter">
           <select value={filter} onChange={(e) => setFilter(e.target.value)}>
@@ -54,7 +54,7 @@ function App() {
           </select>
         </div>
       </div>
-      <div className="Container">
+      <div className="Container" id="mobile">
         {active ? (
           <ActiveCountry active={active} setActive={setActive} />
         ) : (
