@@ -54,6 +54,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .Country {
@@ -120,6 +121,10 @@
 
 #Filter {
   width: auto;
+}
+
+#mobile {
+  align-items: center;
 }
 
 @media screen and (max-width: 806px) {
