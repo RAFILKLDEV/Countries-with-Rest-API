@@ -3,19 +3,18 @@ import Search from "./components/Search/Search";
 import "./App.css";
 import Country from "./components/Country/Country";
 import axios from "axios";
+import ActiveCountry from "./components/ActiveCountry/ActiveCountry";
 
 function App() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
   const [countries, setCountries] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
+  const [active, setActive] = useState("");
 
   const toggleDark = () => {
-    console.log("cliquei");
     setDarkMode(!darkMode);
   };
-
-  console.log(darkMode);
 
   useEffect(() => {
     const api = "https://restcountries.com/v3.1/all";
@@ -56,24 +55,32 @@ function App() {
         </div>
       </div>
       <div className="Container">
-        <div className="Countries">
-          {countries.map((e, i) => {
-            if (filter) {
-              if (e.region.toLowerCase().includes(filter.toLowerCase())) {
+        {active ? (
+          <ActiveCountry active={active} setActive={setActive} />
+        ) : (
+          <div className="Countries">
+            {countries.map((e, i) => {
+              if (filter) {
+                if (e.region.toLowerCase().includes(filter.toLowerCase())) {
+                  if (
+                    e.name.common.toLowerCase().includes(search.toLowerCase())
+                  ) {
+                    return (
+                      <Country key={i} Country={e} setActive={setActive} />
+                    );
+                  }
+                }
+              } else {
                 if (
                   e.name.common.toLowerCase().includes(search.toLowerCase())
                 ) {
-                  return <Country key={i} Country={e} />;
+                  return <Country key={i} Country={e} setActive={setActive} />;
                 }
               }
-            } else {
-              if (e.name.common.toLowerCase().includes(search.toLowerCase())) {
-                return <Country key={i} Country={e} />;
-              }
-            }
-            return "";
-          })}
-        </div>
+              return "";
+            })}
+          </div>
+        )}
       </div>
     </div>
   );

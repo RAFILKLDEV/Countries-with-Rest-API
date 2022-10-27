@@ -9,6 +9,7 @@
 }
 
 #Dark-mode {
+  animation: darkin 0.5s ease-in;
   --white: rgb(20, 20, 20);
   --gray: rgb(40, 40, 40);
   --black: rgb(250, 250, 250);
@@ -40,6 +41,8 @@
 
 .Countries {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -76,10 +79,40 @@
   padding: 15px 20px 15px 20px;
 }
 
+#Active {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  gap: 10px;
+}
+
+#Active img {
+  width: 600px;
+  height: 353px;
+}
+
+#Column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 #Search {
   width: 100%;
 }
 
 #Filter {
   width: auto;
+}
+
+@keyframes darkin {
+  from {
+    opacity: 50%;
+  }
+
+  to {
+    opacity: 100%;
+  }
 }
