@@ -3,7 +3,11 @@
 ### 🛠️ Resumo do Projeto
 
 - Esse projeto foi criado seguindo o desafio do <a href="https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca">FrontEnd Mentor</a>.
-- O Projeto exibe em uma pagina com todas as bandeiras dos paises com algumas informações, é possivel pesquisar, filtrar, selecionar um pais para obter mais informações e alternar para tema escuro.
+- O Projeto exibe em uma pagina bandeiras de todos os paises com algumas informações, é possivel pesquisar, filtrar, selecionar um pais para obter mais informações e alternar para tema escuro.
+
+### 📷 Imagens
+
+- <iframe src="https://giphy.com/embed/dtov9VcECxf22p9hxc" width="480" height="262" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 ### ✔️ Tecnologias utilizadas
 
