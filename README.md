@@ -7,7 +7,7 @@
 
 ### 📷 Imagens
 
-- <img src="https://s4.gifyu.com/images/Countries-5.gif" width="1024" height="560" />
+- <img src="https://s4.gifyu.com/images/Countries-5.gif" width="1125" height="614" />
 
 ### ✔️ Tecnologias utilizadas
 
