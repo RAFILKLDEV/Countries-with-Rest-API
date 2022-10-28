@@ -7,7 +7,7 @@
 
 ### 📷 Imagens
 
-- <iframe src="https://giphy.com/embed/dtov9VcECxf22p9hxc" width="480" height="262" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+- <img src="https://s4.gifyu.com/images/Countries-5.gif" width="1024" height="560" />
 
 ### ✔️ Tecnologias utilizadas
 
